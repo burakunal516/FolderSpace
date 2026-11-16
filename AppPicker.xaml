@@ -1,0 +1,11 @@
+<Window x:Class="FolderSpace.AppPicker" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Uygulama Ekle" Width="540" Height="620" MinWidth="430" MinHeight="450" WindowStartupLocation="CenterOwner" Background="#24262B" Foreground="White" PreviewMouseWheel="SlowScroll">
+ <Grid Margin="20">
+  <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <StackPanel><TextBlock Text="Uygulama seç" FontSize="23" FontWeight="SemiBold"/><TextBlock Text="Birden fazla uygulamayı işaretleyebilirsin." Foreground="#ACADB4" Margin="0,5,0,15"/></StackPanel>
+  <TextBox x:Name="SearchBox" Grid.Row="1" TextChanged="SearchChanged" Height="38" FontSize="14" Background="#383B42" Foreground="White" BorderBrush="#53565E" Padding="10,7"/>
+  <ListBox x:Name="AppList" Grid.Row="2" Margin="0,13,0,12" Background="#24262B" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="False">
+   <ListBox.ItemTemplate><DataTemplate><Border Background="#34363D" CornerRadius="9" Margin="0,3" Padding="9"><Grid><Grid.ColumnDefinitions><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions><CheckBox IsChecked="{Binding Selected, Mode=TwoWay}" VerticalAlignment="Center" Margin="4,0,14,0"/><Image Grid.Column="1" Source="{Binding Icon}" Width="28" Height="28" Margin="0,0,12,0"/><TextBlock Grid.Column="2" Text="{Binding Name}" VerticalAlignment="Center" Foreground="White" TextTrimming="CharacterEllipsis"/></Grid></Border></DataTemplate></ListBox.ItemTemplate>
+  </ListBox>
+  <Grid Grid.Row="3"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions><StackPanel Orientation="Horizontal"><Button Content="Tümünü seç" Click="SelectAllClick" Margin="0,0,7,0" Padding="9"/><Button Content="Temizle" Click="ClearClick" Padding="9"/></StackPanel><Button x:Name="AddButton" Grid.Column="1" Content="Seçilenleri Ekle" Click="ConfirmClick" Padding="18,10" Background="#656872" Foreground="White" FontWeight="SemiBold"/></Grid>
+ </Grid>
+</Window>
