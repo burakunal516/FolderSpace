@@ -1,84 +1,84 @@
-# MenuFolder
+<div align="right">
 
-**A customizable desktop application launcher for Windows, built with C# and WPF.**
+**English** | [Türkçe](README_TR.md)
 
-MenuFolder helps you organize your desktop by grouping applications into separate, customizable menus. Instead of keeping dozens of shortcuts on your desktop, you can create dedicated launchers for games, development tools, school applications, and more.
+</div>
+
+# FolderSpace (MenuFolder)
+
+A customizable application launcher for Windows, built with **C#**, **WPF**, and **.NET 10**.
+
+FolderSpace helps you keep your desktop organized by grouping applications into separate menus. Instead of searching through many shortcuts, you can create purpose-specific launchers for development tools, games, school applications, and more.
 
 ## Features
 
-- **Multiple Independent Menus:** Create separate launchers for different application categories.
-- **Custom Desktop Shortcuts:** Open each menu directly from its own desktop shortcut.
-- **Custom Icons:** Choose your own PNG, JPG, or ICO images for menu shortcuts.
-- **Theme Customization:** Personalize menus with different colors and icons.
-- **Batch Application Selection:** Add multiple installed applications at once.
-- **Application Search:** Find applications without manually locating executable files.
-- **Persistent Application Icons:** Keep application icons even after removing their desktop shortcuts.
-- **Adjustable Interface:** Rename menus and organize applications independently.
-- **Smooth Scrolling:** Controlled scrolling in both the main menu and application selection window.
-- **Local Data Storage:** Save your menus and applications locally.
+- **Multiple menus:** Create and manage separate application groups.
+- **Customizable menus:** Change menu names, colors, and shortcut icons.
+- **Desktop shortcuts:** Open an individual menu from its desktop shortcut.
+- **Batch application selection:** Select and add multiple applications in one step.
+- **Application discovery:** Find installed applications without manually locating every `.exe` file.
+- **Icon handling:** Preserve application icons independently of their original desktop shortcuts.
+- **Scrolling:** Navigate menus and the application picker with controlled scrolling.
+- **Local configuration:** Store menu and application settings locally.
 
-## Technologies
+## Technology stack
 
-| Technology | Purpose |
-|---|---|
+| Technology | Usage |
+| --- | --- |
 | C# | Application logic |
-| WPF | Desktop user interface |
-| XAML | Interface design |
-| .NET 10 | Application framework |
-| JSON | Local data persistence |
-| Windows APIs | Shortcut and icon management |
+| WPF / XAML | Windows desktop interface |
+| .NET 10 (`net10.0-windows`) | Application framework |
+| JSON | Local settings and menu data |
+| Windows APIs | Shortcuts and application icons |
 
-## Getting Started
+## Requirements
 
-### Requirements
-
-- Windows 10 or Windows 11
-- Visual Studio 2022 or later with WPF development support
+- Windows 10 or 11
 - .NET 10 SDK
+- Visual Studio with .NET desktop development support, or another compatible .NET development environment
 
-### Installation
+## Run locally
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/YOUR_USERNAME/MenuFolder.git
-```
+   ```bash
+   git clone https://github.com/burakunal516/FolderSpace.git
+   cd FolderSpace
+   ```
 
-2. Open `FolderSpace.csproj` in Visual Studio.
-3. Restore dependencies and build the project.
-4. Press `F5` to run MenuFolder.
+2. Open `FolderSpace.csproj` in Visual Studio, or run:
 
-### Usage
+   ```bash
+   dotnet restore
+   dotnet run --project FolderSpace.csproj
+   ```
 
-1. Create a new menu, such as **Games** or **Development**.
-2. Customize its name, color, and icon.
-3. Select applications from the application list.
-4. Add multiple applications at once.
-5. Create a desktop shortcut for the menu.
-6. Launch your applications from your organized desktop.
+3. Create your first menu, give it a name, select applications, and optionally create a desktop shortcut.
 
-## Project Structure
+> **Note:** This is a Windows-only WPF application. A packaged installer is not currently documented in this repository; the steps above run the source project.
 
-The project uses WPF and XAML for its interface, C# for application management, and JSON files for saving menu configurations.
+## Main source files
 
-## Future Improvements
+| File | Role |
+| --- | --- |
+| `App.xaml` / `App.xaml.cs` | Application startup |
+| `MainWindow.xaml` / `.cs` | Main window and menu management |
+| `AppPicker.xaml` / `.cs` | Application selection interface |
+| `IconPicker.cs` | Icon selection support |
+| `FolderSpace.csproj` | .NET project configuration |
 
-- Drag-and-drop application reordering
-- Additional themes and customization options
-- Improved application discovery
-- Enhanced animations and transitions
-- More flexible menu layouts
+## Planned improvements
 
-## Project Status
+- Drag-and-drop application ordering
+- More themes and layouts
+- Improved application discovery and animations
 
-**In development**
+These are ideas for future versions, **not claims about existing features**.
 
-MenuFolder is a personal desktop application project. New features and improvements are being developed.
+## Status
+
+**In development.** FolderSpace is a personal Windows desktop application project.
 
 ## License
 
-No license has been specified yet.
-
----
-
-Built with C# and WPF.
+No license file is currently included in the repository.
